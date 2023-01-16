@@ -1,8 +1,8 @@
 RewriteEngine On
 RewriteBase /
 
-# RedirectMatch ^/[^index]\.php /404.php 
-
 RewriteRule ^cart/ /elements/cart.php
-RewriteRule ^[^index]\.php 404.php
+RewriteCond %{REQUEST_URI} !/elements/cart.php
+RewriteRule ^elements/ 404.php
+
 ErrorDocument 404 /404.php 
