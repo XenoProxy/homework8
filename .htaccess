@@ -1,0 +1,7 @@
+RewriteEngine On
+RewriteBase /
+
+# RedirectMatch ^/[^index]\.php /404.php 
+
+RewriteRule ^[^index]\.php 404.php
+ErrorDocument 404 /404.php 
