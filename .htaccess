@@ -2,7 +2,6 @@ RewriteEngine On
 RewriteBase /
 
 RewriteRule ^cart/ /elements/cart.php
-# RewriteRule ^functions/ /elements/functions.php
 RewriteCond %{REQUEST_URI} !/elements/cart.php
 # RewriteRule ^elements/ 404.php
 
