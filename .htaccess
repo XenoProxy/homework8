@@ -3,6 +3,6 @@ RewriteBase /
 
 RewriteRule ^cart/ /elements/cart.php
 RewriteCond %{REQUEST_URI} !/elements/cart.php
-# RewriteRule ^elements/ 404.php
+RewriteRule ^elements/ 404.php
 
 ErrorDocument 404 /404.php 
