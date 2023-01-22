@@ -11,13 +11,12 @@ function getProducts(){
 
     $result = curl_exec($ch);
     $errors = curl_errno($ch);
-    if($errors)
-    {
+    if($errors) {
         echo 'Errors  (' . $errors . '): ' . curl_error($ch);
     } else {
         return json_decode($result, true);
     }
-    curl_close($ch);    
+       
 }
 
 function showProducts(){
@@ -30,59 +29,32 @@ function showProducts(){
                 <img src="' . $product['image'] . '" alt="' . $product['title'] . '"/>
                 <h3>' . $product['title'] . '</h3>
                 <div class="product_price">' . $product['price'] . ' $ </div></br>
-                <a class="add_to_cart" 
-                    href="/?id='. $product['id'] .
-                    '&title='. $product['title'] .
-                    '&price='. $product['price'] .
-                    '">Add to cart
-                </a>
                 <form action="/" method="POST">
-                    <input type="hidden" name="prod_id" value="'. $product['id'] .'">
+                    <input type="hidden" name="id" value="'. $product['id'] .'">
+                    <input type="hidden" name="title" value="'. $product['title'] .'">
+                    <input type="hidden" name="price" value="'. $product['price'] .'">
                     <input name="addProdToCart" type="submit" value="Add to cart" />
-                </form>
+                </form>                
             </div>            
         ';
-
     }
 
     if (!empty($html)) {
         echo '<div class="product_list">'. $html .'</div>';
     }
-
-    //print_r(addProdToCart());
-    //echo addProdToCart();
 }
 
 function addProdToCart(){
-    // $cart = [];
-    if (isset($_POST['prod_id'])){
-        // array_push($cart, $_POST['prod_id']);
+
+    if ($_POST['id']) {
         $n = count($_COOKIE) + 1;
-        setcookie('prod' . $n, serialize($_GET['prod_id']), time() + 1200); 
+        $cookie_val = array('id' => $_GET['id'], 'title' => $_GET['title'], 'price' => $_GET['price']);
+        $cookie = setcookie('prod' . $n, serialize($cookie_val), time() + 120);        
     }
-    //return $_COOKIE;
 
-
-
-
-
-
-    //$domain = ($_SERVER['HTTP_HOST'] != 'localhost') ? $_SERVER['HTTP_HOST'] : false;
-    // if ($_GET['id']) {
-    //     $n = count($_COOKIE) + 1;
-    //     $cookie = setcookie('prod' . $n, $_GET['id'], time() + 1200, '/');        
-    // }
-
-    // $html = '';
-    // $html .= '
-    //         <div class="cart_count">
-    //             <span>'. $n .'</span>
-    //         </div>
-    //     ';
-
-    // if ($cookie) {
-    //     echo '<a href="/cart/" class="cart">'. $html .'</a>';
-    // }
+    if ($cookie) {
+        echo '<a href="/cart/" class="cart">Cart</a>';
+    }
 
     
 }
