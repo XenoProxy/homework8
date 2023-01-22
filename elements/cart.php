@@ -6,10 +6,9 @@
         
         <?php 
         $sum = 0;
-        foreach($_COOKIE as $key => $prod){
-            $prodCart = unserialize($prod);
-            echo '<p class="prodCart">' . $prodCart['title'] . ': <span>$' . $prodCart['price'] . '</span>
-            <a href="cart.php?delProd='. $key . '">X</a></p>';
+        foreach($_COOKIE as $key => $prod){       
+            $prodCart = json_decode($prod, true);
+            echo '<p class="prodCart">' . $prodCart['title'] . ': $' . $prodCart['price'] . '</p>';
             
             $sum += $prodCart['price'];
             

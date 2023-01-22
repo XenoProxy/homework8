@@ -45,16 +45,13 @@ function showProducts(){
 }
 
 function addProdToCart(){
-
     if ($_POST['id']) {
         $n = count($_COOKIE) + 1;
-        $cookie_val = array('id' => $_GET['id'], 'title' => $_GET['title'], 'price' => $_GET['price']);
-        $cookie = setcookie('prod' . $n, serialize($cookie_val), time() + 120);        
+        $cookie_val = array('id' => $_POST['id'], 'title' => $_POST['title'], 'price' => $_POST['price']);
+        $cookie = setcookie('prod' . $n, json_encode($cookie_val), time() + 120);        
     }
 
     if ($cookie) {
         echo '<a href="/cart/" class="cart">Cart</a>';
     }
-
-    
 }
