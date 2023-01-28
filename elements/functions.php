@@ -51,7 +51,15 @@ function addProdToCart(){
         $cookie = setcookie('prod' . $n, json_encode($cookie_val), time() + 120);        
     }
 
+    $html = '';
+    $html .= '            
+            <img src="../img/shopping-cart.png">
+            <div class="cart_count">
+                <span>'. $n .'</span>
+            </div>
+        ';
+        
     if ($cookie) {
-        echo '<a href="/cart/" class="cart">Cart</a>';
+        echo '<a href="/cart/" class="cart">'. $html .'</a>';
     }
 }
