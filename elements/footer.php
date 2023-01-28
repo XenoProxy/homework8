@@ -16,7 +16,9 @@
             </div>
         </div>
         <div class="copyright">
-            <p>&copy; Copyright 2022</p>
+            <p>&copy; Copyright 
+                <?php echo date("Y") ?>
+            </p>
         </div> 
     </div>
 </footer>

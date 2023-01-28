@@ -27,18 +27,22 @@ function showProducts(){
         $html .= '
             <div class="product">
                 <img src="' . $product['image'] . '" alt="' . $product['title'] . '"/>
-                <h3>' . $product['title'] . '</h3>
-                <div class="product_price">' . $product['price'] . ' $ </div></br>
-                <form action="/" method="POST">
-                    <input type="hidden" name="id" value="'. $product['id'] .'">
-                    <input type="hidden" name="title" value="'. $product['title'] .'">
-                    <input type="hidden" name="price" value="'. $product['price'] .'">
-                    <input name="addProdToCart" type="submit" value="Add to cart" />
-                </form>                
+                <div class="product_info">
+                    <h3>' . $product['title'] . '</h3>
+                    <div class="product_price">' . $product['price'] . ' $ </div></br>
+                    <form action="/" method="POST">
+                        <input type="hidden" name="id" value="'. $product['id'] .'">
+                        <input type="hidden" name="title" value="'. $product['title'] .'">
+                        <input type="hidden" name="price" value="'. $product['price'] .'">
+                        <input class ="add" name="addProdToCart" type="submit" value="Add to cart" />
+                    </form>
+                </div>                
             </div>            
         ';
     }
 
+
+    
     if (!empty($html)) {
         echo '<div class="product_list">'. $html .'</div>';
     }

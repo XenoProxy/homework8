@@ -20,7 +20,7 @@ p{
 .header{
   padding: 15px 60px;
   width: 100%;
-  background: rgb(36, 36, 36);
+  background: rgb(24, 24, 24);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -53,7 +53,7 @@ p{
 
 .cart{
   position: relative;
-  margin-right: 100px;
+  margin-right: 130px;
 }
 
 .cart img{
@@ -90,4 +90,83 @@ p{
 
 .main{
   padding: 0px 120px;
+}
+
+.product_list{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.product{
+  flex: none;
+  width: 25%;
+  text-align: center;
+  margin: 20px;
+  height: 400px;
+  padding: 20px;
+  background: rgb(15, 15, 15);
+}
+
+.product:hover{
+  box-shadow: 0px 0px 7px 3px rgba(255, 142, 212, 0.932);
+}
+
+.product img{
+  width: 180px;
+  height: 210px;  
+  border-image-width: auto;
+  border-radius: 10px 20px 30px 40px/30px;
+  /* border-top-left-radius: 30px;
+  border-bottom-right-radius: 30px; */
+}
+
+.product_info{
+  color:rgb(241, 241, 241);
+  margin-top: 20px;
+}
+
+.product_info h3{
+  height: 60px;
+  margin-bottom: 10px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.product_price{
+  color:rgb(171, 210, 255);
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 25px;
+}
+
+form {
+  font-size: 14px;
+  font-weight: 600;
+  padding: 10px 25px;
+  background: #1be074;
+  color: rgb(27, 27, 27);
+  letter-spacing: 0.3px;
+  text-decoration: none;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+form:hover{    
+  background: #17b35d;
+}
+
+footer{
+  padding: 70px 120px 40px 120px;
+  margin-top: 90px;
+  background-color: rgb(15, 15, 15);
+  color: #fff;
+}
+
+.footer{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
