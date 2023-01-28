@@ -2,7 +2,9 @@
 <?php require_once 'elements/functions.php'; ?>
 
 <link rel="stylesheet" href="css/style.css">
-<h1 class="title">Catalog</h1>
+<div class="banner">
+    <h1 class="title">Catalog</h1>
+</div> 
 <section class="main">
     <?php showProducts();?>
 </section>
