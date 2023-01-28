@@ -4,8 +4,12 @@
 }
 
 body{
-  font-family: 'Montserrat';
-  background-color: rgb(216, 216, 216);
+  font-family: Tahoma, Geneva, sans-serif;
+  background-image: url('../img/banner.jpg');
+  background-repeat: no-repeat; 
+  background-position: top center; 
+  background-attachment: fixed;
+  background-size: cover;
 }
 
 p{
@@ -14,7 +18,7 @@ p{
 }
 
 .header{
-  padding: 15px 0;
+  padding: 15px 60px;
   width: 100%;
   background: rgb(36, 36, 36);
   display: flex;
@@ -31,18 +35,29 @@ p{
   top: 0;
 }
 
-.header h2{
+.header h1{
   color: #fff;
   margin-left: 20px;
-  font-size: 30px;
+  font-size: 40px;
+}
+
+.logo{
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+
+.logo img{
+  width: 100%;
 }
 
 .cart{
   position: relative;
+  margin-right: 100px;
 }
 
 .cart img{
-  width: 40px;
+  width: 70px;
 }
 
 .cart_count{
@@ -56,4 +71,23 @@ p{
   background: #db0bc0;
   padding: 1px 5px;
   line-height: 1px;
+}
+
+.banner{
+  background-color: cadetblue;
+  height: 15vh;
+  vertical-align: middle;
+  align-items: center;
+  margin-bottom: 80px;
+}
+
+.title{
+  font-size: 55px;
+  text-align: center;
+  color: #fff;
+  line-height: 15vh;
+}
+
+.main{
+  padding: 0px 120px;
 }
