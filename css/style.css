@@ -137,12 +137,12 @@ p{
 
 .product_price{
   color:rgb(171, 210, 255);
-  font-size: 16px;
+  font-size: 20px;
   font-weight: 600;
   margin-bottom: 25px;
 }
 
-form {
+form .add{
   font-size: 14px;
   font-weight: 600;
   padding: 10px 25px;
@@ -154,7 +154,7 @@ form {
   border-radius: 5px;
   cursor: pointer;
 }
-form:hover{    
+form .add:hover{    
   background: #17b35d;
 }
 
