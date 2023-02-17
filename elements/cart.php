@@ -25,7 +25,7 @@
             
         
         if ($_GET['delProd']) {
-            setcookie($_GET['delProd'], $prod, time()-2000);
+            setcookie($_GET['delProd'], $prod, time()-3600, '/');
         }
         ?>
     </div>
